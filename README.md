@@ -324,7 +324,11 @@ Le programme suivant permet de lire une chaîne de caractères entrée par l'uti
 ```C  
 #include <stdio.h>  
 int main() {  
- char chaine[80]; printf("Entrez une chaîne: "); fgets(chaine, 80, stdin); fputs(chaine, stdout);}  
+    char chaine[80];
+    printf("Entrez une chaîne: ");
+    fgets(chaine, 80, stdin);
+    fputs(chaine, stdout);
+}  
 ```  
 
 18. Sachant qu'une chaîne de caractères se termine par le caractère `'\0'`, complétez le programme pour qu'il calcule la longueur de la chaîne entrée par l'utilisateur et qu'il affiche cette valeur.  
