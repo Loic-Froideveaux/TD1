@@ -10,7 +10,7 @@ Voici un exemple simple de programme en C :
 ```C  
 #include <stdio.h>  
 int main() {  
-	printf("Youpi !\n");
+    printf("Youpi !\n");
 }  
 ```  
 (On peut faire encore plus court, par exemple «`int main(){}`» mais le programme ne fait rien du tout)  
@@ -64,13 +64,13 @@ Les variable en C sont déclarées en indiquant leur *type*, suivi du nom de la 
 On peut bien sûr définir des fonctions :  
 ```C  
 int mult(int a, int b) {
-	return a*b;
+    return a*b;
 }  
 ```  
 La syntaxe générale d'une fonction est :  
 ```C  
 <type du résultat> <nom de fonction> (<type1> <nom1>, <type2> <nom2>, ...) {  
-	...  
+    ...  
 }  
 ```  
 Une fonction peut éventuellement ne rien renvoyer (son type de retour est alors `void`) et peut prendre n'importe quel nombre d'arguments (éventuellement aucun, comme la fonction `main` du premier exemple).  
@@ -82,18 +82,18 @@ Enfin, tout programme en C doit contenir une fonction appelée «`main`» dont l
 6. Définissez une fonction `dbl` qui prend en argument un entier et renvoie le double de cet entier. Modifiez la fonction `main` pour qu'elle affiche le résultat de `dbl(4)` (ça devrait être 8...).  
      
    **Indication :** Pour afficher un entier, il faut utiliser le code «`%i`» dans la fonction `printf` puis donner l'entier à afficher. Par exemple :
-	```C
-	printf("résultat: %i\n", a);
-	```
-	si `a` est un entier.  
+    ```C
+    printf("résultat: %i\n", a);
+    ```
+    si `a` est un entier.  
   
 ## Les types  
   
 Les types de base en C sont :  
 - `char` : un octet représentant un caractère. Pour décrire la valeur d'un caractère, on le place entre guillemets simples (attention, le nom de la variable n'est pas entre guillemets, mais le caractère qu'il faut mettre comme valeur l'est) :  
     ```C  
-	char c = 'A';
-	```
+    char c = 'A';
+    ```
 - `int` : un nombre entier dont la taille correspond à celle des entiers du système d'exploitation (en général 4 octets) ;  
 - `float` : un nombre en virgule flottante en simple précision  (4 octets) ;  
 - `double` : un nombre en virgule flottante en double précision (8 octets).  
@@ -117,8 +117,8 @@ printf("Valeur : %i\n", tab[1]);
      
    **Remarque :** Vous pouvez utiliser plusieurs fois le code `%i` dans un appel de `printf`, en lui donnant alors autant d'arguments supplémentaires que de codes spéciaux :  
     ```C
-	printf("a: %i, b: %i, c: %i\n", a, b, c);
-	```  
+    printf("a: %i, b: %i, c: %i\n", a, b, c);
+    ```  
 Les chaînes de caractères sont des tableaux de caractères dont le dernier caractère est `'\0'` (ce qui correspond au caractère dont le numéro dans la table ASCII est *0*, et non pas le caractère qui affiche le chiffre *0* à l'écran, qui serait `'0'` en C et correspond au numéro 48).  
   
 8. Combien d'espace mémoire occupe la chaîne de caractères `"Youpi\n"` ?  
@@ -145,11 +145,11 @@ On considère le programme suivant :
 ```C  
 #include <stdio.h>  
 int main() {  
-	int a, *b;
-	a = 12;
-	b = &a;
-	*b = a + 1;
-	printf("a = %i, b = %i\n", a, b);
+    int a, *b;
+    a = 12;
+    b = &a;
+    *b = a + 1;
+    printf("a = %i, b = %i\n", a, b);
 }  
 ```  
 9. Expliquez ce que fait chacune des lignes. Que valent les variables `a` et `b` à la fin de l'exécution ? Recopiez, compilez et exécutez le programme pour vérifier vos réponses.  
@@ -163,10 +163,10 @@ Il est fortement recommandé d'utiliser l'option `-Wall` et d'écrire des progra
    **Indication :** On rappelle que le code `%i` dans la fonction `printf` sert à afficher des entiers, donc des objets de type `int`.  
   
 11. Modifiez la dernière ligne du programme en  
-	```C
-	printf("a = %i, b = %lu\n", a, (long unsigned) b);
-	```
-	Recompilez avec l'option `-Wall` et vérifiez que le *warning* a disparu.  
+    ```C
+    printf("a = %i, b = %lu\n", a, (long unsigned) b);
+    ```
+    Recompilez avec l'option `-Wall` et vérifiez que le *warning* a disparu.  
   
 **Explication :** Beaucoup de choses en C sont fondamentalement représentées par des entiers. Il est alors possible de considérer qu'une valeur d'un certain type est en fait une valeur d'un autre type. Par exemple le caractère `'0'`, qui est le numéro 48 de la table ASCII est représenté par la valeur numérique 48, sur un octet (donc une valeur entre 0 et 255). Ce n'est pas un `int` car il n'est représenté que sur un octet, mais on pourrait très bien décider de le considérer comme un `int`.  
   
@@ -187,16 +187,16 @@ La déclaration «`int tab[10];`» demande au programme de réserver l'espace m�
 13. En modifiant le programme de la question précédente, déterminez quelle est la taille d'un `float`.  
   
 14. Si l'on exécute le programme suivant, quelle devrait être la différence entre les deux valeurs affichées ?
-	```C
-	#include <stdio.h>
-	int main() {  
-		int t[2];
-		printf("Premiere adresse: %lu,\nseconde adresse: %lu\n",
-		(long unsigned) t,
-		(long unsigned) (t+1));
-	}
-	```
-	Copiez, compilez et exécutez le programme. Qu'observez-vous ?  
+    ```C
+    #include <stdio.h>
+    int main() {  
+        int t[2];
+        printf("Premiere adresse: %lu,\nseconde adresse: %lu\n",
+        (long unsigned) t,
+        (long unsigned) (t+1));
+    }
+    ```
+    Copiez, compilez et exécutez le programme. Qu'observez-vous ?  
   
 #### Arithmétique pointeur  
   
@@ -258,21 +258,21 @@ On peut délimiter un bloc d'instructions entre accolades (par exemple pour les 
   
 ```C  
 if (<expression>)  
-	<instruction>
+    <instruction>
 else  
-	<instruction>
+    <instruction>
 ```  
   
 ```C  
 switch (<expression>) {  
-	case <valeur 1>:
-		<instructions>
-		break;
-	case <valeur 2>:
-		<instructions>
-		break;
-	default:
-		<instructions>
+    case <valeur 1>:
+        <instructions>
+        break;
+    case <valeur 2>:
+        <instructions>
+        break;
+    default:
+        <instructions>
 }
 ```  
   
@@ -332,7 +332,7 @@ int main() {
 
 19. Écrivez une fonction qui prend en argument une chaîne de caractères et teste si cette chaîne est un palindrome (la fonction renvoie un entier qui vaut 1 si le mot est un palindrome et 0 sinon).  
      **Indication :** La fonction renvoie un entier et prend en argument un pointeur vers un caractère (le début d'un tableau de caractères). Son *prototype* est donc `int palindrome(char *s)`.
-	**Remarque :** Attention au caractère `'\n'` en fin de chaîne qui ne doit pas être pris en compte.
+    **Remarque :** Attention au caractère `'\n'` en fin de chaîne qui ne doit pas être pris en compte.
 
 ## Définition de types et structures  
   
@@ -342,9 +342,9 @@ Par exemple, on peut définir une structure `Personne` contenant une chaîne de 
   
 ```C
 struct Personne {
-	char *nom;
-	int age;
-	float taille;
+    char *nom;
+    int age;
+    float taille;
 };  
 ```  
   
@@ -365,23 +365,23 @@ Ainsi, dans l'exemple, la taille complète d'un objet de type `struct Personne` 
 Vous pouvez vérifier la taille occupée en mémoire par un objet en utilisant l'instruction `sizeof` (il est possible que ce code produise des *warnings* car le type de retour de l'instruction `sizeof` est un type nommé `size_t` qui peut être soit un entier non signé soit un entier long non signé). Pour éviter les *warnings* il faudrait *caster* toutes les valeurs renvoyées par `sizeof` en `int`, mais c'est un peu lourd pour les besoins de l'exercice) :  
 ```C  
 printf("chaine: %i, entier: %i, flottant: %i, personne: %i\n",
-	sizeof (char*),
-	sizeof (int),
-	sizeof (float),
-	sizeof (struct Personne));  
+    sizeof (char*),
+    sizeof (int),
+    sizeof (float),
+    sizeof (struct Personne));  
 ```
   
 20. À la suite de la définition de la strcture `Personne`, définissez une structure `Famille` contenant 5 champs :
-	- `nom` : une chaîne de caractères ;  
+    - `nom` : une chaîne de caractères ;  
     - `pere` : une personne ;  
     - `mere` : une personne ;  
     - `nb_enfants` : un entier ;  
     - `enfants` : un tableau de personnes.  
   
 21. Quelle est la taille en mémoire d'un objet de type `struct Famille` ? Vérifiez en utilisant `sizeof`.  
-	**Remarque :** Il est possible que la taille renvoyée par `sizeof` soit plus grande que la taille attendue en faisant la somme des tailles de tous les éléments de la structure. C'est dû au fait que le compilateur choisit parfois d'arrondir au multiple de 16 supérieur (sur une machine en 64 bits) pour des raisons «d'alignement» (c'est plus pratique pour le système si les choses tombent bien sur des multiples de 16).
+    **Remarque :** Il est possible que la taille renvoyée par `sizeof` soit plus grande que la taille attendue en faisant la somme des tailles de tous les éléments de la structure. C'est dû au fait que le compilateur choisit parfois d'arrondir au multiple de 16 supérieur (sur une machine en 64 bits) pour des raisons «d'alignement» (c'est plus pratique pour le système si les choses tombent bien sur des multiples de 16).
 
 22. Écrivez une fonction `age_total` qui prend en argument un objet de type `struct Famille` et renvoie un entier correspondant à la somme des âges de tous les membres de la famille.
-	**Indication :** Il n'existe pas de moyen en C d'obtenir la longueur d'un tableau en ne connaissant que l'adresse du premier élément. Il faut donc mémoriser la taille des tableaux dans des variables. C'est à ça que sert le champ `nb_enfants`, et on peut donc supposer que le tableau `enfants` a exactement `nb_enfants` cases.
+    **Indication :** Il n'existe pas de moyen en C d'obtenir la longueur d'un tableau en ne connaissant que l'adresse du premier élément. Il faut donc mémoriser la taille des tableaux dans des variables. C'est à ça que sert le champ `nb_enfants`, et on peut donc supposer que le tableau `enfants` a exactement `nb_enfants` cases.
 
 23. Créez une variable contenant une famille ayant deux enfants. Vérifiez que la fonction `age_total` marche bien.
