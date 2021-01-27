@@ -57,7 +57,7 @@ float x;
 char carac, *mot;  
 int entier, tab[10];  
 ```  
-Les variable en C sont déclarées en indiquant leur *type*, suivi du nom de la variable. Si on veut déclarer plusieurs variable ayant le même type, on peut séparer les noms par des virgules (sans avoir à répéter le type).  
+Les variables en C sont déclarées en indiquant leur *type*, suivi du nom de la variable. Si on veut déclarer plusieurs variable ayant le même type, on peut séparer les noms par des virgules (sans avoir à répéter le type).  
   
 **Remarque :** Dans l'exemple, «`int entier, tab[10]`» définit un entier `nombre` ainsi qu'un tableau contenant 10 entiers nommé `tab`. La notation «`*mot`» de la deuxième ligne est également spéciale, nous y reviendrons par la suite.  
   
